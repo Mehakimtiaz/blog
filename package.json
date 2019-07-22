@@ -1,0 +1,26 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "http-server": "^0.9.0",
+    "json-server": "^0.15.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "http-server": "http-server . -a localhost -p 8000 -c-1",
+    "json-server": "json-server --watch db.json",
+    "start": "concurrently \"npm run http-server\" \"npm run json-server\""
+  },
+  "author": "mehak",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.8.8",
+    "concurrently": "^4.1.1"
+  },
+  "description": ""
+}

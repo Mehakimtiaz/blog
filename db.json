@@ -1,0 +1,26 @@
+{
+    "users":[
+        {
+            "id":"1",
+            "firstname":"mehak",
+            "email":"mehak.imtiaz.i@gmail.com",
+            "post":"mehak post1",
+            "description":"description1"
+        },
+        {
+            "id":"2",
+            "firstname":"mehak2",
+            "email":"mehak.imtiaz.i@gmail.com",
+            "post":"mehak post2",
+            "description":"description2"
+        }
+        ,
+        {
+            "id":"3",
+            "firstname":"mehak3json ",
+            "email":"mehak.imtiaz.i@gmail.com",
+            "post":"mehak post3",
+            "description":"description3"
+        }
+    ]
+}
