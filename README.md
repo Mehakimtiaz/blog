@@ -4,8 +4,7 @@ npm configuration,
 
 local http-server,
 local json-server,
-bower ,
-grunt concatination
-.unzip bower module,node module and src file
+bower 
+
 
 
