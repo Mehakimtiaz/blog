@@ -7,7 +7,9 @@
 
   <title>Clean Blog</title>
    <script src="bower_components/angular/angular.js"></script>
+   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="src\js\index.js"></script>
+
   <script type="application/json" src="bower_components\bootstrap\dist\css\bootstrap.min.css.map"></script>
 
   <!-- Bootstrap core CSS -->
@@ -73,36 +75,34 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 class="post-title" >
+              Posts:
+             </h2>
         <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title" >
-             Posts:
-            </h2>
+         
+           
 	
 <div  ng-controller="myCtrl"> 
 <table  class="table">
  <tr>
-      <th >Id</th>
-      <th >First Name</th>
-      <th >Email</th>
+      <th >name</th>
+      <th >post</th>
+ 
   
     </tr>
   <tr ng-repeat="x in myData">
-    <td>{{ x.id }}</td>
-    <td>{{ x.firstname }}</td>
-	<td>{{ x.email }}</td>
+       <td><a href='#!name/{{x.id}}'>{{ x.firstname }}</a></td>
+      <td><a href='#!post/{{x.id}}'>{{ x.post }}</a></td>
+     
   </tr>
 </table>
-</div>            <h3 class="post-subtitle" id="jsondata">
-             
-            </h3>
-          </a>
+</div>            
+<div ng-view></div>   
          
         </div>
+        
         <hr>
-       
-       
-        <!-- Pager -->
+           <!-- Pager -->
         <div class="clearfix">
           <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
         </div>

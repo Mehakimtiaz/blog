@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="src\js\index.js"></script>
+  <title>Clean Blog - Start Bootstrap Theme</title>
+  <script type="application/json" src="bower_components\bootstrap\dist\css\bootstrap.min.css.map"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="src/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="src/css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body ng-app="myApp">
+
+
+  <!-- Page Header -->
+ 
+  <h2>user detail</h2>
+  
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div  ng-controller="usercontroller"> 
+                <table  class="table">
+                    <tr>
+                        <th >id</th>
+                        <th >name</th>
+                        <th >email</th>
+                   
+                    
+                      </tr>
+                    <tr ng-repeat="x in myData">
+                         <td>{{ x.id }}</td>
+                         <td>{{ x.firstname }}</td>
+                        <td>{{ x.email}}</td>
+                        
+                    </tr>
+                   </table>
+                </div>
+          </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="src/vendor/jquery/jquery.min.js"></script>
+  <script src="src/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="src/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
