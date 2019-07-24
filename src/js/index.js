@@ -1,61 +1,67 @@
-var app = angular.module('myApp',['ngRoute']);
-app.controller('myCtrl', function($scope, $http) {
-  $http({
-    method : "GET",
-    url : " http://localhost:3000/users"
-  }).then(function (response) {
-      $scope.myData=response.data;
-      $scope.id = response.id;
-      $scope.firstname = response.firstname;
-      $scope.post = response.post;
-    });
-});
-app.config(['$routeProvider',function($routeProvider){
-  $routeProvider.
-  when('/post/:id',{
-    templateUrl:'post.html',
-    controller:'postcontroller'
-  }).
-  when('/name/:id', {
-      templateUrl: 'name.html',
-      controller: 'usercontroller'
-  }).
-  otherwise({
-    redirectTo:'/post'
-  });
-}]);
-app.controller('postcontroller',function($scope, $http,$routeParams) {
-  $http({
-    method : "GET",
-    url : " http://localhost:3000/users"
-  }).then(function (response) {
+"use strict";
 
-      $scope.myData=response.data;
-      $scope.id= response.id;
-      console.log($routeParams.id ); 
-      if($routeParams.id==$scope.id)
-      {
-     
-      $scope.firstname = response.firstname;
-      $scope.post = response.post;
-      $scope.description = response.description;
+angular.module("core", ["core.post", "core.user"]), angular.module("core.post", ["ngResource"]), angular.module("core.post").factory("Post", ["$resource", function(rp) {
+  return rp("http://localhost:3000/posts/:postId", {}, {
+      query: {
+          method: "GET",
+          params: {
+              postId: ""
+          },
+          isArray: !0
+      },
+      byUser: {
+          method: "GET",
+          params: {
+              userId: ""
+          },
+          isArray: !0
+      },
+      post: {
+          method: "POST",
+          url: "http://localhost:3000/posts",
+          isArray: !1
       }
-    });
-});
-app.controller('usercontroller',function($scope, $http, $routeParams) {
-
-   $http({
-    method : "GET",
-    url : " http://localhost:3000/users"
-  }).then(function (response) {
-     console.log($routeParams.id ); 
-      $scope.myData=response.data;
-      $scope.id= response.id;
-      if($routeParams.id==$scope.id)
-      {
-      $scope.id = response.id;
-      $scope.firstname = response.firstname;
-      $scope.post = response.email;
+  })
+}]),
+ angular.module("core.user", ["ngResource"]), angular.module("core.user").factory("User", ["$resource", function(t) {
+  return t("http://localhost:3000/users/:userId", {}, {
+      query: {
+          method: "GET",
+          params: {
+              userId: ""
+          },
+          isArray: !0
       }
-    });
+  })
+}]),
+ angular.module("postList", ["core.post"]), angular.module("postList").component("postList", {
+  templateUrl: "src/post-list/post-list.template.html",
+  controller: ["Post", function(t) {
+      self = this, self.post = {}, self.posts = t.query(), self.orderProp = "id", self.submitForm = function() {
+          t.post({
+              userId: self.post.userId,
+              id: self.post.id,
+              title: self.post.title,
+              body: self.post.body
+          })
+      }
+  }]
+}), angular.module("postDetail", ["ngRoute", "core.post", "core.comment"]), angular.module("postDetail").component("postDetail", {
+  templateUrl: "src/post-detail/post-detail.template.html",
+  controller: ["$routeParams", "Post", "Comment", function(t, e, o) {
+      this.post = e.get({
+          postId: t.postId
+      }), this.comments = o.query({
+          postId: t.postId
+      })
+  }]
+}), angular.module("userDetail", ["ngRoute", "core.user", "core.post"]), angular.module("userDetail").component("userDetail", {
+  templateUrl: "src/user-detail/user-detail.template.html",
+  controller: ["$routeParams", "User", "Post", function(t, e, o) {
+      this.user = e.get({
+          userId: t.userId
+      }), this.posts = o.byUser({
+          userId: t.userId
+      })
+  }]
 });

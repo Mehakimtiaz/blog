@@ -22,13 +22,3 @@ $('#name').focus(function() {
   $('#success').html('');
 });
 
-angular.module('myblogApp', [])
-.controller('BlogController', ['$window','$scope', function($window,$scope) {
-  $scope.master = {};
-
-  $scope.update = function(user) {
-    $scope.master = angular.copy(user);
-	// $window.alert('Hello ' + $scope.master);
-  };
-
-}]);
