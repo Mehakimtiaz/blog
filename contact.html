@@ -1,4 +1,4 @@
-<html lang="en" ng-app="myblogApp">
+<html lang="en" >
 <head>
                                                                                                                                                                                                                           
   <meta charset="utf-8">
@@ -39,9 +39,7 @@
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="post.html">Sample Post</a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
@@ -81,33 +79,30 @@
 			
 			
               <label>Name</label>
-              <input  type="text"  ng-model="user.name" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-              <h7>Hello {{user.name  | uppercase }}</h7>
+              <input  type="text"  class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+            
 			  <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Email Address</label>
-              <input type="email" class="form-control" ng-model="user.email" placeholder="Email Address" id="uEmail" required data-validation-required-message="Please enter your email address.">
+              <input type="email" class="form-control"  placeholder="Email Address" id="uEmail" required data-validation-required-message="Please enter your email address.">
               <p class="help-block text-danger"></p>
             </div>
-			<div ng-show="form.$submitted || form.uEmail.$touched">
-             <span ng-show="form.uEmail.$error.required">Tell us your email.</span>
-             <span ng-show="form.uEmail.$error.email">This is not a valid email.</span>
-            </div>
+	
           </div>
           <div class="control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>Phone Number</label>
-              <input type="tel" ng-model="user.phone" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+              <input type="tel"class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Message</label>
-              <textarea rows="5"  ng-model="user.msg" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+              <textarea rows="5"  class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
               <p class="help-block text-danger"></p>
             </div>
           </div>
@@ -117,8 +112,7 @@
             <button type="submit"  ng-click="update(user)" class="btn btn-primary" id="sendMessageButton">Send</button>
           </div>
         </form>
-		<p>form = {{user}}</p>
-       <p>master = {{master}}</p>
+	
       </div>
     </div>
   </div>

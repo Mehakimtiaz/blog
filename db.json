@@ -1,26 +1,51 @@
 {
-    "users":[
-        {
-            "id":"1",
-            "firstname":"mehak",
-            "email":"mehak.imtiaz.i@gmail.com",
-            "post":"mehak post1",
-            "description":"description1"
-        },
-        {
-            "id":"2",
-            "firstname":"mehak2",
-            "email":"mehak.imtiaz.i@gmail.com",
-            "post":"mehak post2",
-            "description":"description2"
-        }
-        ,
-        {
-            "id":"3",
-            "firstname":"mehak3json ",
-            "email":"mehak.imtiaz.i@gmail.com",
-            "post":"mehak post3",
-            "description":"description3"
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "firstname": "mehak",
+      "email": "mehak.imtiaz.i@gmail.com",
+      "post": "mehak post1",
+      "description": "description1"
+    },
+    {
+      "id": "2",
+      "firstname": "mehak2",
+      "email": "mehak.imtiaz.i@gmail.com",
+      "post": "mehak post2",
+      "description": "description2"
+    },
+    {
+      "id": "3",
+      "firstname": "mehak3json ",
+      "email": "mehak.imtiaz.i@gmail.com",
+      "post": "mehak post3",
+      "description": "description3"
+    }
+  ],
+  "posts": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "this is title",
+      "body": "this is content"
+    },
+    {
+      "userId": 2,
+      "id": 2,
+      "title": "ssssssssssssssssss",
+      "body": "ssssssssssssssssssssssssssssssssss"
+    },
+    {
+      "userId": 3,
+      "id": 3,
+      "title": "eee",
+      "body": "e ad\n mmmmmmmmmmmmm \nmmmmmmmmmmmmmmmmmmmmm"
+    },
+    {
+      "userId": "9",
+      "id": "9",
+      "title": "99999",
+      "body": "9999"
+    }
+  ]
 }
