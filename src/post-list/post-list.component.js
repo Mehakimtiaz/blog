@@ -1,6 +1,4 @@
 'use strict';
-
-// Register `postList` component, along with its associated controller and template
 angular.
   module('postList').
   component('postList', {
@@ -12,7 +10,6 @@ angular.
         self.post = {};
         self.posts = Post.query();
         self.orderProp = 'id';
-
         self.submitPost = function() {
           Post.post({userId: self.post.userId, id: self.post.id, title: self.post.title, body: self.post.body});
         }
