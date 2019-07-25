@@ -46,22 +46,20 @@ angular.module("core", ["core.post", "core.user"]), angular.module("core.post", 
           })
       }
   }]
-}), angular.module("postDetail", ["ngRoute", "core.post", "core.comment"]), angular.module("postDetail").component("postDetail", {
+}), angular.module("postDetail", ["ngRoute", "core.post"]), angular.module("postDetail").component("postDetail", {
   templateUrl: "src/post-detail/post-detail.template.html",
-  controller: ["$routeParams", "Post", "Comment", function(t, e, o) {
+  controller: ["$routeParams", "Post", function(t, e) {
       this.post = e.get({
-          postId: t.postId
-      }), this.comments = o.query({
           postId: t.postId
       })
   }]
 }), angular.module("userDetail", ["ngRoute", "core.user", "core.post"]), angular.module("userDetail").component("userDetail", {
   templateUrl: "src/user-detail/user-detail.template.html",
-  controller: ["$routeParams", "User", "Post", function(t, e, o) {
-      this.user = e.get({
-          userId: t.userId
-      }), this.posts = o.byUser({
-          userId: t.userId
+  controller: ["$routeParams", "User", "Post", function(m, i, obj) {
+      this.user = i.get({
+          userId: m.userId
+      }), this.posts = obj.byUser({
+          userId: m.userId
       })
   }]
 });
